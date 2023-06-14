@@ -26,6 +26,7 @@ sudo systemctl start vnstat.service
 
 # verifique o status do serviço
 sudo systemctl status vnstat.service
+systemctl status vnstat
 
 # verifique se o vnstat está funcionando
 vnstat
