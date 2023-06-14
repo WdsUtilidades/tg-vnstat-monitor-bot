@@ -7,7 +7,7 @@ O script relata o uso do tráfego no mês atual (da ferramenta vnstat)
 
 #Como parece?
 
-![screenshot](readme/screenshot.png)
+![screenshot](readme/screenshot2.png)
 
 # Instalação
 
