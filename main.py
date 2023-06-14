@@ -55,10 +55,10 @@ async def send_status(chat_id):
     
 <b>⬇️ Tráfego de Entrada:</b> <code>{human_bytes(rx)}</code>
 <b>⬆️ Tráfego de Saída:</b> <code>{human_bytes(tx)}</code>
-<b>(limite do Servidor:</b> <code>{human_bytes(LIMIT_GIB)}</code><b>)</b>
+<b>Limite do Servidor:</b> <code>{human_bytes(LIMIT_GIB)}</code>
 <b>Total Usado:</b> <code>{human_bytes(total)}</code>
 
-<b>Limite de Tráfego de Saída:</b> {emoji} <code>{percent_used:.2f}</code>% <b>Usado</b>
+<b>Limite de Tráfego de Saída:</b> {emoji} <code>{percent_used:.2f}%</code> <b>Usado</b>
 '''
     await application.bot.send_message(chat_id=chat_id, text=text, parse_mode='HTML')
 
