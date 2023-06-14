@@ -30,7 +30,7 @@ TG_CHAT_ID = os.environ.get("TG_CHAT_ID")
 async def start(update: Update, context: CallbackContext):
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text=f"I'm a bot, please talk to me! Your id: {update.effective_chat.id}"
+        text=f"Eu sou um bot, por favor fale comigo!  Sua identificação: {update.effective_chat.id}"
     )
 
 
@@ -51,12 +51,13 @@ async def send_status(chat_id):
     if percent_used > 60: emoji = '☢️'
     if percent_used > 80: emoji = '❗️'
     if percent_used > 90: emoji = '💥'
-    text = f'''Usage on {interface_name} in {month}:
-⬇️ rx {human_bytes(rx)}
-⬆️ tx {human_bytes(tx)} (limit: {human_bytes(LIMIT_GIB)})
-Total: {human_bytes(total)}
+    text = f'''<b>Monitor de uso do</b> <code>{interface_name}</code>
+<b>No mês de</b> <code>{month}</code>:
+<b>⬇️ Tráfego de Entrada:</b> <code>{human_bytes(rx)}</code>
+<b>⬆️ Tráfego de Saída:</b> <code>{human_bytes(tx)}</code> <b>(limite:</b> <code>{human_bytes(LIMIT_GIB)}</code><b>)</b>
+<b>Total:</b> <code>{human_bytes(total)}</code>
 
-TX Limit: {emoji} {percent_used:.2f}% used
+<b>Limite de Tráfego de Saída:</b> {emoji} <code>{percent_used:.2f}</code>% <b>Usado</b>
 '''
     await application.bot.send_message(chat_id=chat_id, text=text)
 
