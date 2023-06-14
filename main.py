@@ -53,10 +53,10 @@ async def send_status(chat_id):
     if percent_used > 90: emoji = '💥'
     text = f'''<b>Monitor de uso do</b> <code>{interface_name}</code><b>no mês de</b> <code>{month}</code>:
     
-<b>⬇️ Tráfego de Entrada:</b> <code>{human_bytes(rx)}</code>
-<b>⬆️ Tráfego de Saída:</b> <code>{human_bytes(tx)}</code>
-<b>Limite do Servidor:</b> <code>{human_bytes(LIMIT_GIB)}</code>
-<b>Total Usado:</b> <code>{human_bytes(total)}</code>
+<b>📥 Tráfego de Entrada:</b> <code>{human_bytes(rx)}</code>
+<b>📤 Tráfego de Saída:</b> <code>{human_bytes(tx)}</code>
+<b> Limite do Servidor:</b> <code>{human_bytes(LIMIT_GIB)}</code>
+<b>🗄 Total Usado:</b> <code>{human_bytes(total)}</code>
 
 <b>Limite de Tráfego de Saída:</b> {emoji} <code>{percent_used:.2f}%</code> <b>Usado</b>
 '''
