@@ -42,10 +42,16 @@ cd tgvnstat
 
 git clone https://github.com/WdsUtilidades/tgvnstatmonitor
 cd tgvnstatmonitor
+
+#cria o ambiente virtual
+
+python3 -m venv APP_VENV
+source APP_VENV/bin/activate
+
 pip3 install -r requirements.txt
 ```
 
-2) Faça um script de execução como este em `~/tgvnstat/report.sh`
+2) Faça um script de execução como este em `~/tgvnstat/report.sh` com o `nano report.sh`
 
 ```sh
 #!/bin/bash
@@ -62,7 +68,14 @@ set -x
 cd tgvnstatmonitor
 # git pull # auto-update repo
 
+# ativar ambiente virtual
+source APP_VENV/bin/activate
+
+## inicia o bot
 python3 main.py
+
+# desativar ambiente virtual
+deactivate
 ```
 
 3) Adicionar ao cron
@@ -70,5 +83,5 @@ python3 main.py
 ```sh
 # todos os dias às 13:00. ver: https://crontab.guru/#0_13_*_*_*
 # assumindo que /home/user/ é seu $HOME.
-*/0 13 * * * cd /home/user/tgvnstat && ./report.sh > /dev/null
+*/0 13 * * * cd /root/tgvnstat && ./report.sh > /dev/null
 ```
