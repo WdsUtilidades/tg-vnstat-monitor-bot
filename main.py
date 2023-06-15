@@ -51,7 +51,7 @@ async def send_status(chat_id):
     if percent_used > 60: emoji = '☢️'
     if percent_used > 80: emoji = '❗️'
     if percent_used > 90: emoji = '💥'
-    text = f'''<b>Monitor de uso </b> <code>{interface_name}</code><b> mês de</b> <code>{month}</code>:
+    text = f'''<b>Monitor de uso </b><code>{interface_name}</code><b> mês de</b> <code>{month}</code>:
 
 <b>📤 Tráfego de Saída:</b> <code>{human_bytes(tx)}</code>
 <b>📥 Tráfego de Entrada:</b> <code>{human_bytes(rx)}</code>
